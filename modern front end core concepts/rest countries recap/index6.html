@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Countries</title>
+</head>
+
+<body>
+    <h2>Rest Countries</h2>
+    <div class="countries" id="countries"></div>
+
+
+
+    <script>
+        const loadCountries = () => {
+            fetch('https://restcountries.com/v3.1/all')
+                .then(res => res.json())
+                .then(data => displayCountries(data));
+        }
+        const displayCountries = countries => {
+            // console.log(countries);
+            const countriesHTML = countries.map(country => getCountryHTML(country))
+            // console.log(countriesHTML);
+            // console.log(countriesHTML[0]);
+            const container = document.getElementById('countries');
+            container.innerHTML = countriesHTML.join(' ');
+            //ebar dekhbo country gular modhe r kono comma nai
+        }
+        const getCountryHTML = country => {
+            return `
+            <div>
+        <h2>
+            ${country.name.common}
+        </h2>
+    </div>
+            `
+        }
+        loadCountries();
+        //ekhn console e gele prochur country er html dekhte pabo
+    </script>
+</body>
+
+</html>
