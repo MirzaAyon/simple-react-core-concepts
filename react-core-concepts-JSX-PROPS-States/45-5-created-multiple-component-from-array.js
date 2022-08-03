@@ -91,3 +91,7 @@ function Friend(props) {
 
 
 export default App;
+//video 5 e shesh 
+//6 theke new app e jabo
+//my-app2
+//css gula my-app ei ache
