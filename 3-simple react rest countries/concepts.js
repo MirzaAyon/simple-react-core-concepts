@@ -1,0 +1,1 @@
+// মেইন জিনিস হচ্ছে ছয়টা - JSX, component, porps, events, state, আর effect
